@@ -15,3 +15,4 @@ vim.keymap.set("n", "<leader>fg", builtin.git_files, {})
 vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
 vim.cmd(":set number relativenumber")
+vim.opt.termguicolors = true
