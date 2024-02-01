@@ -1,5 +1,12 @@
 require("lspconfig").lua_ls.setup({
 	filetypes = { "lua" },
+	settings = {
+		Lua = {
+			diagnostics = {
+				globals = { "vim" },
+			},
+		},
+	},
 })
 require("lspconfig").tsserver.setup({})
 require("lspconfig").tailwindcss.setup({

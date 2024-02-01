@@ -5,6 +5,12 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>w", vim.cmd.w)
 vim.keymap.set("n", "<leader>q", vim.cmd.q)
 vim.keymap.set("n", "<leader>qq", vim.cmd.qa)
+vim.keymap.set("n", "<leader>c", ":bd<CR>", { noremap = true, silent = true })
+-- Map F2 to go to the next buffer
+vim.keymap.set("n", "<F2>", ":bnext<CR>", { noremap = true, silent = true })
+
+-- Map F1 to go to the previous buffer
+vim.keymap.set("n", "<F1>", ":bprevious<CR>", { noremap = true, silent = true })
 vim.opt.autoindent = true
 vim.opt.expandtab = true
 vim.opt.tabstop = 2
