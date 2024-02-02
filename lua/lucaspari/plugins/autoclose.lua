@@ -1,6 +1,8 @@
 return {
-	"m4xshen/autoclose.nvim",
+	"windwp/nvim-autopairs",
 	config = function()
-		require("autoclose").setup()
+		require("nvim-autopairs").setup({
+			disable_filetype = { "TelescopePrompt" },
+		})
 	end,
 }

@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+vim.cmd("set clipboard=unnamedplus")
 require("lucaspari")
 require("lucaspari.lspconfig")
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
