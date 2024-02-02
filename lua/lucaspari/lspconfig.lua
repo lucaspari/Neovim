@@ -12,6 +12,9 @@ require("lspconfig").tsserver.setup({})
 require("lspconfig").tailwindcss.setup({
 	filetypes = { "typescript", "javascript", "typescriptreact", "javascriptreact" },
 })
+require("lspconfig").rust_analyzer.setup({
+	filetypes = { "rust" },
+})
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
