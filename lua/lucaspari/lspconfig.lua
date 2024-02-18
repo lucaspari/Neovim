@@ -12,11 +12,7 @@ require("lspconfig").tsserver.setup({})
 require("lspconfig").tailwindcss.setup({
   filetypes = { "typescript", "javascript", "typescriptreact", "javascriptreact" },
 })
-require("lspconfig").rust_analyzer.setup({
-  filetypes = { "rust" },
-})
-require 'lspconfig'.marksman.setup({
-  filetypes = { "markdown" }
+require 'lspconfig'.gopls.setup({
 })
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -75,6 +71,8 @@ cmp.setup({
   mapping = cmp.mapping.preset.insert({
     ["<C-b>"] = cmp.mapping.scroll_docs(-4),
     ["<C-f>"] = cmp.mapping.scroll_docs(4),
+    ['<C-j>'] = cmp.mapping.select_next_item(),
+    ['<C-k>'] = cmp.mapping.select_prev_item(),
     ["<C-Space>"] = cmp.mapping.complete(),
     ["<C-e>"] = cmp.mapping.abort(),
     ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.

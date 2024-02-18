@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.cmd("set clipboard=unnamedplus")
+vim.cmd("set relativenumber")
 require("lucaspari")
 require("lucaspari.lspconfig")
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
@@ -22,9 +22,9 @@ vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
 vim.keymap.set("n", "<leader>fg", builtin.git_files, {})
 vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
+vim.keymap.set("n", "<leader>fp", ":Telescope projects<CR>", {})
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { noremap = true })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true })
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
 vim.keymap.set("n", "<A-e>", apiTree.tree.toggle, {})
-vim.cmd(":set number relativenumber")
 vim.opt.termguicolors = true
