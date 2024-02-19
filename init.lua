@@ -28,3 +28,4 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true })
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
 vim.keymap.set("n", "<A-e>", apiTree.tree.toggle, {})
 vim.opt.termguicolors = true
+vim.cmd(":hi LineNr guibg=#000000 guifg=#6BFFCF")

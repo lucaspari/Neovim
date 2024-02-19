@@ -8,6 +8,7 @@ require("lspconfig").lua_ls.setup({
     },
   },
 })
+require 'lspconfig'.pylsp.setup {}
 require("lspconfig").tsserver.setup({})
 require("lspconfig").tailwindcss.setup({
   filetypes = { "typescript", "javascript", "typescriptreact", "javascriptreact" },
