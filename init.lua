@@ -1,17 +1,14 @@
 vim.g.mapleader = " "
-vim.cmd("set relativenumber")
+vim.cmd(":set number relativenumber")
 require("lucaspari")
 require("lucaspari.lspconfig")
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>w", vim.cmd.w)
 vim.keymap.set("n", "<leader>q", vim.cmd.q)
 vim.keymap.set("n", "<leader>qq", ":qa<CR>")
-vim.keymap.set("n", "<leader>c", ":bd<CR>", { noremap = true, silent = true })
--- Map F2 to go to the next buffer
-vim.keymap.set("n", "<F2>", ":bnext<CR>", { noremap = true, silent = true })
-
--- Map F1 to go to the previous buffer
-vim.keymap.set("n", "<F1>", ":bprevious<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>cc", ":bd<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-.>", ":bnext<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-,>", ":bprevious<CR>", { noremap = true, silent = true })
 vim.opt.autoindent = true
 vim.opt.expandtab = true
 vim.opt.tabstop = 2
@@ -19,6 +16,7 @@ vim.opt.shiftwidth = 2
 local builtin = require("telescope.builtin")
 local apiTree = require("nvim-tree.api")
 vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
+vim.keymap.set("n", "<leader>ft", builtin.live_grep, {})
 vim.keymap.set("n", "<leader>fg", builtin.git_files, {})
 vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
@@ -26,10 +24,9 @@ vim.keymap.set("n", "<leader>fp", ":Telescope projects<CR>", {})
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { noremap = true })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true })
 vim.keymap.set("v", "<C-c>", '"+y')
-vim.api.nvim_set_keymap('n', '<leader>sp', ':vsplit<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', { noremap = true })
-vim.api.nvim_set_keymap('n', '<C-h>', '<C-w>h', { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>sp", ":vsplit<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-l>", "<C-w>l", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-h>", "<C-w>h", { noremap = true })
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
 vim.keymap.set("n", "<A-e>", apiTree.tree.toggle, {})
-vim.opt.termguicolors = true
 vim.cmd(":hi LineNr guibg=#000000 guifg=#6BFFCF")
